@@ -1,11 +1,23 @@
 <template>
     <div>
         <iv-visualisation :title="pageName" :vue_config="vue_config" :page_number="1">
-            <div class="iv-welcome-message">
-                <img src='@/assets/ImpVis-logo.png' alt="ImpVisLogo" height="50"/>
-                <h1> Welcome to Imperial Visualisations!</h1>
-                <p> Your page, Intersections has succesfully been set up using the multiPage CLI template!</p>
-            </div>
+            <template #hotspots>
+                <iv-pane position="left" format="overlay">
+                    <iv-sidebar-content>
+                        <iv-sidebar-section title="Guidance" icon="star">
+                            Directions on how to use vis
+                        </iv-sidebar-section>
+                    </iv-sidebar-content>
+                </iv-pane>
+                <iv-toggle-hotspot position="bottom">
+                    <div style="display:block;" id="buttons">
+                    <iv-button>Add Plane</iv-button>
+                    <iv-button>Add Line</iv-button>
+                    <iv-button>Add Point</iv-button>
+                    </div>
+                </iv-toggle-hotspot>
+                <iv-fixed-hotspot position="right"></iv-fixed-hotspot>
+            </template>
         </iv-visualisation>
     </div>
 </template>
@@ -22,10 +34,7 @@ export default {
 }
 </script>
 <style>
-.iv-welcome-message{
-    display:flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 50px;
-}
+ #buttons > *:not(:last-child){
+     margin-right: 7px;
+ }
 </style>

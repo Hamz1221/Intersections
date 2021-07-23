@@ -18,7 +18,11 @@
     "@impvis/components-katex": "^1.0.0",
     "@impvis/components-threejs": "^1.0.0",
     "core-js": "^3.6.5",
+    "jquery": "^3.6.0",
     "mathjs": "^9.4.4",
+    "numeric": "^1.2.6",
+    "plotly": "^1.0.6",
+    "plotly.js": "^2.2.1",
     "vue": "^2.6.11",
     "vue-awesome": "^4.1.0"
   },
